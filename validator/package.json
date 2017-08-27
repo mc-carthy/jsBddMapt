@@ -1,0 +1,23 @@
+{
+  "name": "validator",
+  "version": "1.0.0",
+  "description": "Validation testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mc-carthy/jsBddMapt.git"
+  },
+  "author": "Mick McCarthy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mc-carthy/jsBddMapt/issues"
+  },
+  "homepage": "https://github.com/mc-carthy/jsBddMapt#readme",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
