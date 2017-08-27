@@ -4,17 +4,16 @@ function nonpositiveValidationRule(n, result) {
     }
 }
 
-function notDivisibleBy3ValidationRule(n, result) {
-    if (n % 3 === 0) {
-        result.push('error.three');
+function notDivisibleByGivenNumberValidationRule(divisor, error) {
+    return function(n, result) {
+        if (n % divisor === 0) {
+            result.push(error);
+        }
     }
 }
 
-function notDivisibleBy5ValidationRule(n, result) {
-    if (n % 5 === 0) {
-        result.push('error.five');
-    }
-}
+var notDivisibleBy3ValidationRule = notDivisibleByGivenNumberValidationRule(3, 'error.three');
+var notDivisibleBy5ValidationRule = notDivisibleByGivenNumberValidationRule(5, 'error.five');
 
 module.exports = function (n) {
     var result = [];
