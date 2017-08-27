@@ -9,30 +9,30 @@ describe('A Validator', function () {
 
     describe('will return error.nonpositive for not strictly positive numbers:', function () {
         it('like 0', function () {
-            expect(validator(0)).to.be.deep.equal(['error.nonpositive']);
+            expect(validator(0)).to.include('error.nonpositive');
         });
         it('like -2', function () {
-            expect(validator(-2)).to.be.deep.equal(['error.nonpositive']);
+            expect(validator(-2)).to.include('error.nonpositive');
         });
     });
 
     describe('will return error.three for divisible by 3 numbers:', function () {
         it('like 3', function () {
-            expect(validator(3)).to.be.deep.equal(['error.three']);
+            expect(validator(3)).to.include('error.three');
         });
 
         it('like 6', function () {
-            expect(validator(6)).to.be.deep.equal(['error.three']);
+            expect(validator(15)).to.include('error.three');
         });
     });
 
     describe('will return error.five for divisible by 5 numbers:', function () {
         it('like 5', function () {
-            expect(validator(5)).to.be.deep.equal(['error.five']);
+            expect(validator(5)).to.include('error.five');
         });
 
-        it('like 10', function () {
-            expect(validator(10)).to.be.deep.equal(['error.five']);
+        it('like 15', function () {
+            expect(validator(15)).to.include('error.five');
         });
     });
 });
