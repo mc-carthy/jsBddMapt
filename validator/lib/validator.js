@@ -7,9 +7,11 @@ var validationRules = [
     notDivisibleByGivenNumberValidationRule(5, 'error.five')
 ];  
 
-module.exports = function (n) {
-    return validationRules.reduce(function(result, rule) {
+module.exports = function (validationRules) {
+    return function (n) {
+      return validationRules.reduce(function (result, rule) {
         rule(n, result);
         return result;
-    }, []);
-}
+      }, []);
+    };
+  };
