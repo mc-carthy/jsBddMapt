@@ -12,13 +12,15 @@ function notDivisibleByGivenNumberValidationRule(divisor, error) {
     }
 }
 
-var notDivisibleBy3ValidationRule = notDivisibleByGivenNumberValidationRule(3, 'error.three');
-var notDivisibleBy5ValidationRule = notDivisibleByGivenNumberValidationRule(5, 'error.five');
+var validationRules = [
+    nonpositiveValidationRule,
+    notDivisibleByGivenNumberValidationRule(3, 'error.three'),
+    notDivisibleByGivenNumberValidationRule(5, 'error.five')
+];  
 
 module.exports = function (n) {
-    var result = [];
-    nonpositiveValidationRule(n, result);
-    notDivisibleBy3ValidationRule(n, result);
-    notDivisibleBy5ValidationRule(n, result);
-    return result;
+    return validationRules.reduce(function(result, rule) {
+        rule(n, result);
+        return result;
+    }, []);
 }
