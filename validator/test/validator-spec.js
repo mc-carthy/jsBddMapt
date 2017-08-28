@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var validator = require('../lib/validator');
+var validator = require('../lib/validator/validator');
 
 describe('A Validator', function () {
     it('will return no errors for valid numbers', function () {
